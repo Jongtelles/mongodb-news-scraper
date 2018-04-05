@@ -1,0 +1,20 @@
+.background-image {
+    height: 100%;
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+}
+
+.panel {
+    border-radius: 0;
+    box-shadow: 3px 3px 20px lightslategrey;
+}
+
+.panel-heading {
+    padding: 15px;
+    background: rgb(30, 37, 35);
+}
+
+.panel-body {
+    font-size: 14pt;
+    padding: 10px;
+}
