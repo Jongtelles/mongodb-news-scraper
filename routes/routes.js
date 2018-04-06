@@ -1,5 +1,4 @@
 const db = require('../models');
-
 module.exports = app => {
     // Home route gets results from the DB
     app.get('/', (req, res) => {
@@ -57,8 +56,13 @@ module.exports = app => {
     });
 
     app.post("/headlines/:id", (req, res) => {
-        db.Headline.findOneAndUpdate({_id: req.params.id}, {$set:{saved: true}}
-    ).then((dbHeadline) => {
+        db.Headline.findOneAndUpdate({
+            _id: req.params.id
+        }, {
+            $set: {
+                saved: true
+            }
+        }).then((dbHeadline) => {
             res.json(dbHeadline);
         });
     });
