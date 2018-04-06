@@ -32,12 +32,12 @@
 <div class="container-fluid article-container">
     {{#if headlines}}
     {{#each headlines}}
-    <div class="row card border-info text-white bg-dark mb-4" data-id='{{this._id}}'>
+    <div class="row card border-info text-white bg-dark mb-4">
         <div class="card-header">
             <a class="article-link float-left" href="{{this.url}}">
                 <h2>{{this.title}}</h2>
             </a>
-            <button id="delete-btn" class="delete-btn btn btn-outline-danger float-right ml-2" href="">Delete from saved</button>
+            <button id="delete-btn" class="delete-btn btn btn-outline-danger float-right ml-2" data-id='{{this._id}}'>Delete from saved</button>
             <button id="notes-btn" class="notes-btn btn btn-outline-info float-right">View Notes</button>
         </div>
         <div class="card-body">

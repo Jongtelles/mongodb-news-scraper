@@ -10,13 +10,7 @@ $(document).ready(function () {
     $('.save-btn').on('click', function () {
         event.preventDefault();
         const headlineId = $(this).attr('data-id');
-        $.ajax({
-            method: "POST",
-            url: `/headlines/${headlineId}`,
-            data: {
-                body:true
-            }
-        });
+        $.post(`/headlines/${headlineId}/save`);
     });
 
 

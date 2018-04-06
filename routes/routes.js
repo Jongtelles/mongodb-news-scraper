@@ -55,7 +55,7 @@ module.exports = app => {
             });
     });
 
-    app.post("/headlines/:id", (req, res) => {
+    app.post("/headlines/:id/save", (req, res) => {
         db.Headline.findOneAndUpdate({
             _id: req.params.id
         }, {
@@ -66,6 +66,19 @@ module.exports = app => {
             res.json(dbHeadline);
         });
     });
+
+    app.post("/headlines/:id/remove", (req, res) => {
+        db.Headline.findOneAndUpdate({
+            _id: req.params.id
+        }, {
+            $set: {
+                saved: false
+            }
+        }).then((dbHeadline) => {
+            res.json(dbHeadline);
+        });
+    });
+
 
 
 }
