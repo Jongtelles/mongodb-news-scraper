@@ -11,6 +11,7 @@ $(document).ready(function () {
         event.preventDefault();
         const headlineId = $(this).attr('data-id');
         $.post(`/headlines/${headlineId}/save`);
+        $(this).parent().parent().empty();
     });
 
 
