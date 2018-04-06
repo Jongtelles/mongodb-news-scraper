@@ -1,20 +1,47 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: black;
+}
+
 .background-image {
     height: 100%;
     background-image: url('../images/background.jpg');
     background-size: cover;
 }
 
-.panel {
+.card {
     border-radius: 0;
     box-shadow: 3px 3px 20px lightslategrey;
 }
 
-.panel-heading {
+.card-heading {
     padding: 15px;
     background: rgb(30, 37, 35);
+    width: 100%;
 }
 
-.panel-body {
+.card-body {
     font-size: 14pt;
     padding: 10px;
+}
+
+.jumbotron {
+    height: 400px;
+    padding: 0px;
+    margin-bottom: 0;
+}
+
+.display-4 {
+    color: whitesmoke;
+    font-weight: bold;
+    line-height: 1.1;
+    margin-top: 100px;
+}
+
+.lead {
+    color: whitesmoke;
+}
+
+hr {
+    color: whitesmoke;
 }

@@ -15,31 +15,37 @@
                 <a class="nav-link" href="/saved">Saved Articles</a>
             </li>
             <li class="nav-item">
-                <a id="scrape-btn" class="btn btn-info" href="#">Retrieve New Articles</a>
+                <button id="scrape-btn" class="btn btn-info">Retrieve New Articles</button>
             </li>
         </ul>
     </div>
 </nav>
 <div class="jumbotron text-center">
-    <div class="background-image"></div>
-    <h1 class="display-4">Mongo Scraper</h1>
-    <hr class="my-4">
-    <p class="lead">Space Edition 🚀</p>
+    <div class="background-image">
+        <div class="row align-items-center">
+            <div class="col">
+                <h1 class="display-4">Mongo Scraper</h1>
+                <hr class="my-4">
+                <p class="lead">Space Edition 🚀</p>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 <div class="container-fluid article-container">
     {{#each headlines}}
-    <div class="row panel panel-default mb-4">
-        <div class="col panel-heading">
-            <div class="row mx-auto">
-                <a class="article-link" href="{{this.url}}">
-                    <h2>{{this.title}}</h2>
-                </a>
-                <a id="save-btn" class="btn btn-success" href="">Save Article</a>
-            </div>
+    <div class="row card border-info text-white bg-dark mb-4">
+        <div class="card-header">
+            <a class="article-link float-left" href="{{this.url}}">
+                <h2>{{this.title}}</h2>
+            </a>
+            <button id="save-btn" class="save-btn btn btn-outline-success float-right" data-id='{{this._id}}'>Save Article</button>
         </div>
-        <div class="panel-body">
+        <div class="card-body">
             {{this.summary}}
         </div>
     </div>
     {{/each}}
 </div>
+
+<script src="../assets/js/home.js"></script>

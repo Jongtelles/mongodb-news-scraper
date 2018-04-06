@@ -6,39 +6,55 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="/">Home
                     <span class="sr-only">(current)</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/saved">Saved Articles</a>
-            </li>
-            <li class="nav-item">
-                <a id="scrape-btn" class="btn btn-info" href="#">Retrieve New Articles</a>
+                <a class="nav-link active" href="/saved">Saved Articles</a>
             </li>
         </ul>
     </div>
 </nav>
 <div class="jumbotron text-center">
-    <div class="background-image"></div>
-    <h1 class="display-4">Mongo Scraper</h1>
-    <hr class="my-4">
-    <p class="lead">Space Edition 🚀</p>
+    <div class="background-image">
+        <div class="row align-items-center">
+            <div class="col">
+                <h1 class="display-4">Mongo Scraper</h1>
+                <hr class="my-4">
+                <p class="lead">Space Edition 🚀</p>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 <div class="container-fluid article-container">
+    {{#if headlines}}
     {{#each headlines}}
-    <div class="panel panel-default mb-4">
-        <div class="panel-heading">
-            <a class="article-link" href="{{this.url}}">
+    <div class="row card border-info text-white bg-dark mb-4" data-id='{{this._id}}'>
+        <div class="card-header">
+            <a class="article-link float-left" href="{{this.url}}">
                 <h2>{{this.title}}</h2>
             </a>
-            <a id="delete-btn" class="btn btn-danger" href="">Delete from saved</a>
-            <a id="notes-btn" class="btn btn-info" href="">View Notes</a>
+            <button id="delete-btn" class="delete-btn btn btn-outline-danger float-right ml-2" href="">Delete from saved</button>
+            <button id="notes-btn" class="notes-btn btn btn-outline-info float-right">View Notes</button>
         </div>
-        <div class="panel-body">
+        <div class="card-body">
             {{this.summary}}
         </div>
     </div>
-    {{/each}}
+{{/each}}
+{{else}}
+    <div class="row card border-info text-white bg-dark mb-4">
+        <div class="card-header text-center">
+            No Saved Articles. <a href="/"><h2>Add some!</h2></a>
+        </div>
+        <div class="card-body">
+        </div>
+    </div>
+{{/if}}
+
 </div>
+
+<script src="../assets/js/saved.js"></script>
