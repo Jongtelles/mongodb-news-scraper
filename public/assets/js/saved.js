@@ -4,6 +4,7 @@ $(document).ready(function () {
         event.preventDefault();
         const headlineId = $(this).attr('data-id');
         $.post(`/headlines/${headlineId}/remove`);
+        $(this).parent().parent().empty();
     });
 
 
