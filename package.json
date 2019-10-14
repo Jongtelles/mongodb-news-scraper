@@ -23,7 +23,7 @@
   "homepage": "https://github.com/Jongtelles/mongodb-news-scraper#readme",
   "dependencies": {
     "axios": "^0.18.1",
-    "body-parser": "^1.18.2",
+    "body-parser": "^1.19.0",
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.17.1",
     "express-handlebars": "^3.0.0",
